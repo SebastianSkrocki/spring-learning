@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-@Controller
+//@Controller
 public class PersonDataLoader implements ApplicationRunner {
     private final PersonRepository personRepository;
 

@@ -3,16 +3,14 @@ package com.sebastianskrocki.springlearning.web.controller;
 import com.sebastianskrocki.springlearning.biz.model.Person;
 import com.sebastianskrocki.springlearning.data.PersonRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
 
     private final PersonRepository personRepository;
+    private Person person;
 
     public PeopleController(PersonRepository personRepository) {
         this.personRepository = personRepository;
@@ -33,6 +31,11 @@ public class PeopleController {
     @PostMapping
     public String savePerson(Person person){
         personRepository.save(person);
+        return "redirect:people";
+    }
+    @DeleteMapping
+    public String deletePerson(Person person){
+        personRepository.delete(person);
         return "redirect:people";
     }
 }
