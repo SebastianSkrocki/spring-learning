@@ -21,5 +21,6 @@ import java.time.LocalDate;
         private String firstName;
         private String lastName;
         private LocalDate dob;
+        private String email;
         private BigDecimal salary;
     }

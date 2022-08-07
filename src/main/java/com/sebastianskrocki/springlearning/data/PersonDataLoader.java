@@ -20,10 +20,10 @@ public class PersonDataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         if (personRepository.count() == 0) {
             List<Person> people = List.of(
-                    new Person(null, "Sebastian", "Skrocki", LocalDate.of(1999, 11, 23), new BigDecimal("1000")),
-                    new Person(null, "Mark", "Mostowiak", LocalDate.of(1989, 1, 17), new BigDecimal("4000")),
-                    new Person(null, "Darek", "Wiszak", LocalDate.of(1997, 10, 13), new BigDecimal("12000")),
-                    new Person(null, "Katarzyna", "Milewska", LocalDate.of(1996, 6, 20), new BigDecimal("6200"))
+                    new Person(null, "Sebastian", "Skrocki", LocalDate.of(1999, 11, 23),"seb@gmail.com", new BigDecimal("1000")),
+                    new Person(null, "Mark", "Mostowiak", LocalDate.of(1989, 1, 17),"seb@gmail.com", new BigDecimal("4000")),
+                    new Person(null, "Darek", "Wiszak", LocalDate.of(1997, 10, 13),"seb@gmail.com", new BigDecimal("12000")),
+                    new Person(null, "Katarzyna", "Milewska", LocalDate.of(1996, 6, 20),"seb@gmail.com", new BigDecimal("6200"))
             );
             personRepository.saveAll(people);
         }
